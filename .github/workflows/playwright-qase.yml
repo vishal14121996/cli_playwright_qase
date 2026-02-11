@@ -32,7 +32,7 @@ jobs:
           QASE_MODE: testops
           QASE_TESTOPS_API_TOKEN: ${{ secrets.QASE_API_TOKEN }}
           QASE_TESTOPS_PROJECT: ${{ secrets.QASE_PROJECT_CODE }}
-        run: npx playwright test
+        run: QASE_MODE=testops npx playwright test
       
       - name: Upload Playwright Report
         if: always()
